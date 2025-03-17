@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricardo's Portfolio</title>
+    <!-- Tab name--> 
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
@@ -31,18 +32,69 @@
     </style>
 </head>
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-    <!-- #mobile-menu-toggle END -->
-     <header>
-        <div id="mobile-menu-close">
-        <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
-</header>
-    <div class="container">
-        <h1>Welcome to My GitHub Pages</h1>
-        <p>This is a simple HTML page for my GitHub Pages site.</p>
-    </div>
+    
+    <nav id="sidebar">
+        <ul>
+            <li class="active">
+                <a href="index.html"></a>
+                <span>Home</span>
+                <!-- short overview showcasing a single project and a little about me this is also the home page-->
+            </li>
+            <li>
+                <a href="aboutme.html"></a>
+                <span>About Me</span>
+                <!-- more in depth in a get to know me-->
+            </li>
+            <li>
+                <a href="experience.html"></a>
+                <span>Experience</span>
+                <!-- list resume-->
+            </li>
+            <li>
+                <a href="education.html"></a>
+                <span>Education</span>
+                <!-- education from resume-->
+            </li>
+            <li>
+                <button class="dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#e3e3e3"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160zm0-80h640v-400H447l-80-80H160v480zm0 0v-480 480z"/></svg>
+                    <span>Projects</span>
+                </button>
+                <ul class="sub-menu">
+                   <li>
+                         <a href="#">Project 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Project 2</a>
+                   </li>
+                       <!-- showcasing projects and in depth of my thought process and how i went about doing it as well as why i created it in the first place-->
+                </ul>    
+                    
+            </li>
+            <li>
+                <a href="skills.html"></a>
+                <span>Skills</span>
+                <!-- list skills from resume-->
+            </li>
+            <li>
+                <a href="contact.html"></a>
+                <span>Contact Me</span>
+            </li>
+        </ul>
+
+    </nav>
+    <main>
+        <div class="container">
+            <h2>HENLO WORLD</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam suscipit debitis, voluptate quidem quia dolorem vel iusto, reiciendis quisquam necessitatibus dignissimos quaerat blanditiis culpa rerum corporis, facere laborum voluptatibus!</p>
+        </div>
+        <div class="container">
+            <h2>HENLO WORLD</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam suscipit debitis, voluptate quidem quia dolorem vel iusto, reiciendis quisquam necessitatibus dignissimos quaerat blanditiis culpa rerum corporis, facere laborum voluptatibus!</p>
+        </div><div class="container">
+            <h2>HENLO WORLD</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam suscipit debitis, voluptate quidem quia dolorem vel iusto, reiciendis quisquam necessitatibus dignissimos quaerat blanditiis culpa rerum corporis, facere laborum voluptatibus!</p>
+        </div>
+    </main>
 </body>
 </html>
