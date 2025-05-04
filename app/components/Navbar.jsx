@@ -14,7 +14,7 @@ const Navbar = () => {
 
     return(
 
-        <>
+       <>
         <div className="fixed top-0 right-0 w-full -z-10 h-24">
             <Image src={assets.header_bg_color} alt='' fill className="object-cover"/>
         </div>
