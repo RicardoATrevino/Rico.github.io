@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-
+html{
+  scroll-behavior: smooth;
+}
 *{
   
   font-family: Outfit;

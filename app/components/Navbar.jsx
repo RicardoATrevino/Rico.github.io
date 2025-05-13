@@ -1,16 +1,29 @@
 import { assets } from "../../assets/assets";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "tailwindcss";
 
 const liclasses = 'rounded-full px-4 py-2 transition-transform transform hover:scale-105 hover:bg-gray-200'
 const aclasses = 'text-grey-700 hover:text-green-900 transition'
 
 const Navbar = () => {
+    const [isScroll, setIsScroll] = useState(false);
     const sideMenuRef = useRef();
     const [menuOpen, setMenuOpen] = useState(false);
     const openMenu = () => setMenuOpen(true);
     const closeMenu = () => setMenuOpen(false);
+    
+    useEffect(() => { 
+        window.addEventListener('scroll', () => {
+            if (scrollY > 50) {
+                setIsScroll(true)
+            } else {
+                setIsScroll(false)
+                    }
+            
+            })
+            }, [])
+
 
     return(
 
@@ -19,16 +32,19 @@ const Navbar = () => {
             <Image src={assets.header_bg_color} alt='' fill className="object-cover"/>
         </div>
         
-        <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center 
-                        justify-between z-50 " >
+        <nav className={`w-full fixed z-50 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center 
+                        justify-between z-50 transition-all duration-500 
+                        ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-lg rounded-full" :""} `} >
             <a href="#top">
                 <Image src={assets.logo} alt='' className="w-28
                 cursor-pointer mr-14"/>
                 </a>
-                <ul className="font-ovo hidden md:flex gap-6 lg:gap-4 rounded-full px-12 py-3 ">
+                <ul className={`font-ovo hidden md:flex gap-6 lg:gap-4 rounded-full px-12 py-3 
+                                ${isScroll ? "": " bg-white shadow-sm bg-opacity-50"}`}>
                     {["Home", "About", "Services", "My Work", "Contact Me"].map((item, index) => (
                         <li key={index} className={liclasses}>
-                            <a href={`#${item.toLowerCase().replace(/\s+/g, '')}`} className={aclasses}>
+                            <a href={item === "Home" ? "#top" : `#${item.replace(/\s+/g, '')}`}onClick={item === "Home" ? (topHome) => {
+                                    topHome.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });} : undefined} className={aclasses}>
                                 {item} 
                             </a>
                         </li>
@@ -53,9 +69,11 @@ const Navbar = () => {
                 </div>
                 {["Home", "About", "Services", "My Work", "Contact Me"].map((item, index) => (
                         <li key={index} className={liclasses} >
-                            <a href={`#${item.toLowerCase().replace(/\s+/g, '')}` } 
-                            className={aclasses} 
-                            onClick={closeMenu}>
+                            <a href={item === "Home" ? "#top" : `#${item.replace(/\s+/g, '')}`} className={aclasses}
+                                onClick={(e) => 
+                                    { if (item === "Home") 
+                                    {e.preventDefault();window.scrollTo({ top: 0, behavior: 'smooth' });}
+                                    closeMenu();}}>
                                 {item} 
                             </a>
                         </li>
