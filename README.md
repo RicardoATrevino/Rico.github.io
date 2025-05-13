@@ -4,7 +4,7 @@ https://rico-personal-website.vercel.app/
 
 
 to-do
- finish adding pages related to navbar
-
+ -finish adding pages related to navbar
+ -upload picture of myself
 
 
