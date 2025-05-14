@@ -18,7 +18,7 @@ const Services = () => {
                 Express.js, and Bootstrap. I have 5 years of experience in web development 
                 and worked on various projects small projects both personal and professional.
             </p>
-            <div className="grid grid-cols-4 gap-6 my-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:[grid-template-colimns:1fr_2fr_1fr] xl:grid-cols-4  gap-6 my-10">
                 {serviceData.map(({icon, title, description, link}, index )=> (
                     <div key={index} className="border border-gray-400 rounded-lg px-8 py-10 cursor-pointer hover:shadow-lg
                                                  hover-shadow-2xl hover:shadow-black/50 hover:bg-lightHover transition-all ease-in-out">
